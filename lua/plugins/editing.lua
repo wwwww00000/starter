@@ -1,7 +1,7 @@
 return {
   -- change some telescope options and a keymap to browse plugin files
   {
-    "echasnovski/mini.comment",
+    "nvim-mini/mini.comment",
     opts = {
       mappings = {
         comment = "<leader>;",
@@ -12,7 +12,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.pairs",
+    "nvim-mini/mini.pairs",
     enabled = false,
   },
 }

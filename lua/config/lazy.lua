@@ -9,7 +9,18 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins",
+      init = function()
+        local ok, ts = pcall(require, "lazyvim.util.treesitter")
+        if ok then
+          ts.ensure_treesitter_cli = function(cb)
+            cb(false, "`tree-sitter-cli` auto-install disabled in local config.")
+          end
+        end
+      end,
+    },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.lang.json" },

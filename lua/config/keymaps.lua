@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader>wd", ":wincmd q<cr>", {})
 vim.keymap.set("n", "<leader>w=", ":wincmd =<cr>", {})
 vim.keymap.set("n", "<leader>w/", ":vsplit<cr>", {})
 vim.keymap.set("n", "<leader>w-", ":split<cr>", {})
-vim.keymap.del("n", "<leader>w|") -- Split window right
+-- vim.keymap.del("n", "<leader>w|") -- Split window right
 vim.keymap.del("n", "<leader>-") -- Split window below
 vim.keymap.del("n", "<leader>|") --Split window right
 
