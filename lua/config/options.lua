@@ -9,3 +9,5 @@ local opt = vim.opt
 
 opt.formatoptions = "jcrqlnt" -- tcqj -- wenbin removed o
 opt.ignorecase = false
+
+vim.g.snacks_animate = false
