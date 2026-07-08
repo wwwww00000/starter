@@ -1,3 +1,8 @@
+-- TODO(molten): If we switch to molten.nvim, test its WezTerm image provider
+-- with willothy/wezterm.nvim. Molten renders those images through
+-- `wezterm imgcat` in a split pane and notes that this provider does not
+-- integrate with tmux.
+
 return {
   {
     "jupyter-vim/jupyter-vim",

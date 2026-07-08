@@ -11,3 +11,5 @@ opt.formatoptions = "jcrqlnt" -- tcqj -- wenbin removed o
 opt.ignorecase = false
 
 vim.g.snacks_animate = false
+
+require("config.wezterm_image").setup()
