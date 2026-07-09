@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 vim.g.maplocalleader = " " -- is "\\" by default
-vim.g.python3_host_prog = "/home/wenbin/.asdf/shims/python"
+vim.g.python3_host_prog = vim.fn.exepath("python3")
 
 local opt = vim.opt
 
