@@ -3,7 +3,13 @@
 -- Add any additional options here
 
 vim.g.maplocalleader = " " -- is "\\" by default
-vim.g.python3_host_prog = vim.fn.exepath("python3")
+
+local hostname = (vim.uv or vim.loop).os_gethostname()
+if hostname:match("^agent%-vps") then
+  vim.g.python3_host_prog = vim.fn.exepath("python3")
+else
+  vim.g.python3_host_prog = vim.env.HOME .. "/.asdf/shims/python"
+end
 
 local opt = vim.opt
 
