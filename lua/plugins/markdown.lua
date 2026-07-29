@@ -7,6 +7,11 @@ return {
       "nvim-mini/mini.icons",
     },
     opts = {
+      code = {
+        conceal_delimiters = false,
+        language = false,
+        border = "none",
+      },
       latex = {
         enabled = true,
         converter = { "latex2text" },
