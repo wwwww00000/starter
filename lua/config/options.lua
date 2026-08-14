@@ -13,6 +13,43 @@ end
 
 local opt = vim.opt
 
+if vim.env.HERDR_ENV then
+  local osc52 = require("vim.ui.clipboard.osc52")
+  local copy = osc52.copy("+")
+
+  local function paste()
+    vim.notify("Herdr clipboard reads are unavailable; use the terminal paste action instead", vim.log.levels.WARN)
+    return { {}, "v" }
+  end
+
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = copy,
+      ["*"] = copy,
+    },
+    paste = {
+      ["+"] = paste,
+      ["*"] = paste,
+    },
+  }
+
+  -- LazyVim leaves 'clipboard' empty over SSH. Forward ordinary yanks while
+  -- keeping puts backed by Neovim's local unnamed register.
+  vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+      local event = vim.v.event
+      if event.operator == "y" and event.regname ~= "+" and event.regname ~= "*" then
+        local lines = vim.list_extend({}, event.regcontents)
+        if event.regtype == "V" then
+          lines[#lines + 1] = ""
+        end
+        copy(lines)
+      end
+    end,
+  })
+end
+
 opt.formatoptions = "jcrqlnt" -- tcqj -- wenbin removed o
 opt.ignorecase = false
 opt.conceallevel = 0
