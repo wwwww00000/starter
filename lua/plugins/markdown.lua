@@ -18,6 +18,11 @@ return {
         inline = true,
         block = true,
       },
+      link = {
+        custom = {
+          x = { icon = "X " },
+        },
+      },
     },
   },
   {
