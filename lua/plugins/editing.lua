@@ -15,4 +15,12 @@ return {
     "nvim-mini/mini.pairs",
     enabled = false,
   },
+  {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        { "z=", icon = "ABC " },
+      },
+    },
+  },
 }
