@@ -20,4 +20,11 @@ return {
       { "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "Diffview Repo History" },
     },
   },
+  {
+    "esmuellert/codediff.nvim",
+    cmd = "CodeDiff",
+    keys = {
+      { "<leader>rh", ":CodeDiff HEAD~", desc = "CodeDiff Recent History" },
+    },
+  },
 }
