@@ -27,4 +27,13 @@ return {
       { "<leader>rh", ":CodeDiff HEAD~", desc = "CodeDiff Recent History" },
     },
   },
+  {
+    dir = vim.fn.expand("~/betwixt"),
+    name = "betwixt",
+    main = "betwixt",
+    cmd = { "BetwixtAttach", "BetwixtOpen" },
+    opts = {
+      author = vim.env.USER or "human",
+    },
+  },
 }
