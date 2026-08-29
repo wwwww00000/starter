@@ -31,7 +31,7 @@ return {
     dir = vim.fn.expand("~/betwixt"),
     name = "betwixt",
     main = "betwixt",
-    cmd = { "BetwixtAttach", "BetwixtOpen" },
+    cmd = { "BetwixtAttach", "BetwixtComment", "BetwixtOpen" },
     opts = {
       author = vim.env.USER or "human",
     },
