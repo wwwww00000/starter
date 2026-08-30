@@ -14,6 +14,10 @@ end
 local opt = vim.opt
 
 if vim.env.HERDR_ENV then
+  -- Restored Herdr sessions may not inherit the outer SSH environment. Keep
+  -- LazyVim from enabling unnamedplus; OSC 52 clipboard reads are unavailable.
+  opt.clipboard = ""
+
   local osc52 = require("vim.ui.clipboard.osc52")
   local copy = osc52.copy("+")
 
@@ -34,8 +38,8 @@ if vim.env.HERDR_ENV then
     },
   }
 
-  -- LazyVim leaves 'clipboard' empty over SSH. Forward ordinary yanks while
-  -- keeping puts backed by Neovim's local unnamed register.
+  -- Forward ordinary yanks while keeping puts backed by Neovim's local
+  -- unnamed register.
   vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
       local event = vim.v.event
