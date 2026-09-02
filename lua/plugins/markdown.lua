@@ -20,6 +20,9 @@ return {
       },
       link = {
         custom = {
+          hackernews = { icon = "HN " },
+          microsoft = { icon = "MS " },
+          neovim = { icon = "NV " },
           x = { icon = "X " },
         },
       },
