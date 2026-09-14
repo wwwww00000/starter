@@ -15,10 +15,10 @@ return {
         ignore = { virtual_lines = false },
       },
       win_options = {
-        conceallevel = { default = 0, rendered = 0 },
+        conceallevel = { default = 0, rendered = 2 },
         concealcursor = { default = "", rendered = "" },
       },
-      -- Only use this plugin for math previews.
+      -- Use this plugin for math previews and tables.
       heading = { enabled = false },
       paragraph = { enabled = false },
       code = { enabled = false },
@@ -27,7 +27,7 @@ return {
       bullet = { enabled = false },
       checkbox = { enabled = false },
       quote = { enabled = false },
-      pipe_table = { enabled = false },
+      pipe_table = { enabled = true, wrap = true },
       link = { enabled = false },
       sign = { enabled = false },
       inline_highlight = { enabled = false },
