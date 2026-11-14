@@ -6,6 +6,10 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = { "markdown", "markdown.mdx" },
   callback = function(event)
     vim.opt_local.conceallevel = 0
+    vim.opt_local.expandtab = true
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.tabstop = 4
 
     -- Treesitter folding is configured after the initial fold calculation.
     -- Refresh it once all FileType callbacks have finished.
